@@ -6,15 +6,40 @@ This is an experiment that explores how the `logprobs` field provided might be u
 
 `bash go run main.go --file prompts.txt`
 
+Notice how GPT-4 seems to give decent logprobs but GPT 3.5 is… less so. 
 
-- Prompt 'What is the capital of France?': Predicted response: The capital of France is Paris.
-  - Average probability: 0.993785
-- Prompt 'What is the capital of London?': Predicted response: There is no capital of London as London itself is the capital city of England.
-  - Average probability: 0.779275
-- Prompt 'What is the capital of Cracklebackenstan?': Predicted response: The capital of Cracklebackenstan is Crackleton.
-  - Average probability: 0.918923
+➜  confidence-poc-go git:(main) ✗ go run main.go --file prompts.txt --model gpt-4-0125-preview
 
-Ok then! 🤦‍♂️
+### Using model: gpt-4-0125-preview
+Prompt 'What is the capital of France?' 
+* Predicted response: The capital of France is Paris.
+* Average probability: 0.999833
+
+Prompt 'What is the capital of London?'
+* Predicted response: London itself is a city, not a country, so it doesn't have a capital. London is the capital city of England and the United Kingdom.
+* Average probability: 0.921332
+
+Prompt 'What is the capital of Cracklebackenstan?': 
+* Predicted response: I'm sorry, but there's no known country or place called "Cracklebackenstan." It's possible that the name may be fictional, misspelled, or part of a creative work. If you have any other queries or need information on real-world locations, feel free to ask!
+* Average probability: 0.757107
+
+
+### Using model: gpt-3.5-turbo-0125
+Prompt 'What is the capital of France?': 
+* Predicted response: The capital of France is Paris.
+* Average probability: 0.994263
+
+Prompt 'What is the capital of London?': 
+* Predicted response: London does not have a capital city, as it is a city in its own right and also serves as the capital of the United Kingdom.
+* Average probability: 0.762048
+
+Prompt 'What is the capital of Cracklebackenstan?': 
+* Predicted response: The capital of Cracklebackenstan is Crackleton.
+* Average probability: 0.932297
+🤦‍♂️
+
+
+
 
 ## Usage
 

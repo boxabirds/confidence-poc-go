@@ -22,10 +22,12 @@ var rootCmd = &cobra.Command{
 
 var fileFlag string
 var debugFlag bool
+var modelFlag string
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&fileFlag, "file", "f", "", "Specify a file to read prompts from")
 	rootCmd.PersistentFlags().BoolVarP(&debugFlag, "debug", "d", false, "Enable detailed debug output")
+	rootCmd.PersistentFlags().StringVarP(&modelFlag, "model", "m", "gpt-3.5-turbo-0125", "Specify the model used by OpenAI")
 }
 
 func main() {
@@ -42,6 +44,8 @@ func run(cmd *cobra.Command, args []string) {
 
 	client := openai.NewClient(apiKey)
 	ctx := context.Background()
+
+	fmt.Printf("Using model: %s\n", modelFlag)
 
 	if fileFlag != "" {
 		processFile(ctx, client, fileFlag)
@@ -71,7 +75,7 @@ func processFile(ctx context.Context, client *openai.Client, filePath string) {
 
 func processPrompt(ctx context.Context, client *openai.Client, prompt string) {
 	resp, err := client.CreateChatCompletion(ctx, openai.ChatCompletionRequest{
-		Model: "gpt-3.5-turbo-0125",
+		Model: modelFlag,
 		Messages: []openai.ChatCompletionMessage{
 			{Role: "user", Content: prompt},
 		},
