@@ -39,6 +39,21 @@ Prompt 'What is the capital of Cracklebackenstan?':
 🤦‍♂️
 
 
+### Using model: gpt-4o
+
+Interestingly, OpenAI's latest model as of 13 May 2024 gives unhelpful results. Also that gpt-4o has a cutoff of Oct 2023.
+
+Prompt 'What is the capital of France?'
+* Predicted response: The capital of France is Paris.
+* Average probability: 0.999968
+
+Prompt 'What is the capital of London?'
+* Predicted response: London does not have a capital as it is itself the capital city of the United Kingdom. The term "capital" usually refers to the city or town that functions as the seat of government and administrative center of a country or region. London is the political, economic, and cultural center of the UK.
+* Average probability: 0.797446
+
+Prompt 'What is the capital of Cracklebackenstan?'
+* Predicted response: As of my latest update in October 2023, there is no country named Cracklebackenstan. It appears that you may be referring to a fictional or non-existent place. If you're looking for information on a real country or an existing location, feel free to provide more details, and I'd be happy to assist you!
+* Average probability: 0.751285
 
 
 ## Usage
