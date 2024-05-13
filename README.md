@@ -45,6 +45,7 @@ Prompt 'What is the capital of Cracklebackenstan?':
 
 -  `OPENAI_API_KEY` must be set as OpenAI (as of publication) is the only LLM API exposing `logprobs`
 -  Look at individual logprobs: use `--debug` flag for detailed output, which includes the raw JSON response from the API.
+-  `--model` can be used to override the model which defaults to GPT 3.5. 
 
 
 
