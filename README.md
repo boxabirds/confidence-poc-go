@@ -1,6 +1,6 @@
 # Experiment: Log Probability Analysis in Text Prediction
 
-This is an experiment that explores how the `logprobs` field provided might be useful to give an indication of confidence. `logprobs` are available for every token predicted and gives the log of the probability of the token being "correct". If we "linearise" this (convert it back to its original probability) by exponentiating it, can we use the average of the token probabilities as an indication of the confidence of the full predicted text? As you can see with the provided samples, probably not! 🤣
+This is an experiment that explores how the `logprobs` field provided might be useful to give an indication of confidence. `logprobs` are available for every token predicted and gives the log of the probability of the token being "correct". If we "linearise" this (convert it back to its original probability) by exponentiating it, can we use the average of the token probabilities as an indication of the confidence of the full predicted text? As you can see with the provided samples, it depends on the model! 🤣
 
 ## Sample Input / Output
 
